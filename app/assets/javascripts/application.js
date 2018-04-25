@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery.min
-//= require jquery-2.2.3.min
+//= require jquery.easing.1.3
+//= require jquery.mobile.customized.min
 //= require_tree .
