@@ -1,0 +1,50 @@
+<!-- Custom-JavaScript-File-Links -->
+<script>
+	jQuery(function(){
+		jQuery('#camera_wrap_2').camera({
+			loader: 'bar',
+			speed: 1000,
+			pagination: false,
+			thumbnails: false,
+		});
+	});
+</script>
+<!-- //Slider-JavaScript-Files -->
+
+<!-- Stats-Number-Scroller-Animation-JavaScript -->
+<script>
+	jQuery(document).ready(function( $ ) {
+		$('.counter').counterUp({
+			delay: 10,
+			time: 1000
+		});
+	});
+</script>
+<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+<script>
+	(function() {
+		[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+			new CBPFWTabs( el );
+		});
+	})();
+</script>
+<!-- //Gallery-Tab-JavaScript -->
+
+<!-- Swipe-Box-JavaScript -->
+<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+</script>
+<!-- //Swipe-Box-JavaScript -->
+
+<!-- Smooth-Scrolling-JavaScript -->
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll, .navbar li a, .footer li a").click(function(event){
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!-- //Smooth-Scrolling-JavaScript -->
+<!-- //Custom-JavaScript-File-Links -->

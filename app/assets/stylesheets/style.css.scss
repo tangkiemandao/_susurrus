@@ -161,7 +161,7 @@ section.cd-section {
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
-	background: url("../images/cd-icon-close.svg") no-repeat center center;
+	background: image-url('cd-icon-close.svg') no-repeat center;
 	-webkit-transform: scale(0) translateZ(0);
 	-moz-transform: scale(0) translateZ(0);
 	-ms-transform: scale(0) translateZ(0);
@@ -309,7 +309,7 @@ section.cd-section {
 	width: 80px;
 	border-radius: 50%;
 	background-color: #555;
-	background-image: url("../images/cd-category-icons.svg");
+	background: image-url('cd-category-icons.svg');
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	transition: 0.5s all;
@@ -668,7 +668,7 @@ section.cd-section {
 /*-- Progressive-Effects --*/
 
 .progressive-effects {
-	background: url("../images/progress.jpg");
+	background: image-url("progress.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -1178,7 +1178,7 @@ input.margin-right {
 /*-- Footer --*/
 
 .footer {
-	background: url("../images/footer.jpg");
+	background: image-url("footer.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
