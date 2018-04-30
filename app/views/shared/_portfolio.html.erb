@@ -1,114 +1,44 @@
 <!-- Portfolio -->
 <div class="portfolio" id="portfolio">
-	<h3>Portfolio</h3>
-	<div class="tabs tabs-style-bar">
-		<nav>
-			<ul>
-				<li><a href="#section-bar-1" class="icon icon-box"><span>FASHION</span></a></li>
-				<li><a href="#section-bar-2" class="icon icon-display"><span>EVENTS</span></a></li>
-				<li><a href="#section-bar-3" class="icon icon-upload"><span>NATURE</span></a></li>
-				<li><a href="#section-bar-4" class="icon icon-tools"><span>MODELS</span></a></li>
-			</ul>
-		</nav>
-		<div class="content-wrap">
-			<!-- Tab-1 -->
-			<section id="section-bar-1" class="agileits text-center ">
-				<h4>FASHION</h4>
-				<div class="gallery-grids">
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("fashion-1.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "fashion-1.jpg", alt: "", class: "img-responsive"  %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("fashion-2.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "fashion-2.jpg", alt: "", class: "img-responsive"  %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("fashion-3.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "fashion-3.jpg", alt: "", class: "img-responsive"  %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</section>
-			<!-- //Tab-1 -->
-
-			<!-- Tab-2 -->
-			<section id="section-bar-2" class="agileits text-center ">
-				<h4>EVENTS</h4>
-				<div class="gallery-grids">
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("event-1.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "event-1.jpg", alt: "", class: "img-responsive" %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</section>
-			<!-- //Tab-2 -->
-
-			<!-- Tab-3 -->
-			<section id="section-bar-3" class="agileits text-center ">
-				<h4>NATURE</h4>
-				<div class="gallery-grids">
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("nature-1.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "nature-1.jpg", alt: "", class: "img-responsive" %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</section>
-			<!-- //Tab-3 -->
-
-			<!-- Tab-4 -->
-			<section id="section-bar-4" class="agileits text-center ">
-				<h4>MODELS</h4>
-				<div class="gallery-grids">
-					<div class="col-md-4 col-sm-4 gallery-top">
-            <a href="<%= image_path("model-1.jpg") %>" class="swipebox">
-							<figure class="effect-bubba">
-                <%= image_tag "model-1.jpg", alt: "", class: "img-responsive" %>
-								<figcaption>
-									<h4>Photography</h4>
-								</figcaption>
-							</figure>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</section>
-			<!-- //Tab-4 -->
-		</div><!-- //Content -->
-	</div><!-- //Tabs -->
+  <div class="container">
+  	<h3>Portfolio</h3>
+  	<div class="tabs tabs-style-bar">
+  		<nav class="hide">
+  			<ul>
+  				<li><a href="#section-bar-1" class="icon icon-box"><span>FASHION</span></a></li>
+  			</ul>
+  		</nav>
+  		<div class="content-wrap">
+  			<!-- Tab-1 -->
+  			<section id="section-bar-1" class="agileits text-center ">
+          <h4><%= portfolios.count %> Projects</h4>
+  				<div class="gallery-grids">
+            <% portfolios.each do |portfolio| %>
+  					  <div class="col-md-4 col-sm-4 gallery-top">
+                <a href="<%= portfolio.image %>" class="swipebox_<%= portfolio.id %>" title="<%= portfolio.introduce %>">
+  					  		<figure class="effect-bubba">
+                    <img src="<%= portfolio.image  %>" alt="" class="img-responsive" style="min-height: 258px; max-height: 258px">
+  					  			<figcaption>
+                      <h4><%= portfolio.name  %></h4>
+  					  			</figcaption>
+  					  		</figure>
+  					  	</a>
+                <% portfolio.portfolio_details.each do |detail|  %>
+                  <a href="<%= detail.image %>" class="swipebox_<%= portfolio.id %> hide" title="<%= detail.introduce %>"></a>
+                <% end %>
+  					  </div>
+            <% end %>
+  					<div class="clearfix"></div>
+  				</div>
+  			</section>
+  			<!-- //Tab-1 -->
+  		</div><!-- //Content -->
+  	</div><!-- //Tabs -->
+  </div>
 </div>
 <!-- //Portfolio -->
+<script>
+  <% @portfolios.each do |portfolio|  %>
+    jQuery(".swipebox_<%= portfolio.id  %>").swipebox();
+  <% end %>
+</script>
