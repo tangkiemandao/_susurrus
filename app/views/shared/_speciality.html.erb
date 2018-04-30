@@ -1,73 +1,23 @@
 <!-- Speciality -->
 <div class="w3threespecialityw3ls" id="w3threespecialityw3ls">
 	<div class="container">
-
 		<h2>What I Capture</h2>
 		<div class="grid cs-style-3">
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid1">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-1.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>FASHION</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid2">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-2.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>NATURE</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid3">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-3.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>WEDDING</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid4">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-4.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>TILT SHIFT</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid5">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-5.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>MONOCHROME</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid6">
-				<figure>
-					<div class="w3threespecialityw3ls-info">
-            <%= image_tag "special-6.jpg", alt: "Couture" %>
-					</div>
-					<figcaption>
-						<h3>DOUBLE EXPOSURE</h3>
-					</figcaption>
-				</figure>
-			</div>
+      <% photos.each do |photo|  %>
+			 <div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid1">
+			 	<figure>
+			 		<div class="w3threespecialityw3ls-info">
+            <%= image_tag photo.link, alt: photo.caption %>
+			 		</div>
+			 		<figcaption>
+            <h3><%= photo.caption  %></h3>
+			 		</figcaption>
+			 	</figure>
+			 </div>
+      <% end  %>
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
-
 	</div>
 </div>
 <!-- //Speciality -->
