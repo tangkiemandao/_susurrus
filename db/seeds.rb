@@ -74,7 +74,7 @@ index = 1
 Portfolio.all.each do |p|
   a = (1..10).to_a.sample
   10.times.each do |i|
-    img = p.details.build
+    img = p.portfolio_details.build
     img.introduce = Faker::Lorem.sentence
     img.image = "#{image_url}#{index}.jpg"
     img.save

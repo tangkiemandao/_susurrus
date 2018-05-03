@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429174136) do
+ActiveRecord::Schema.define(version: 20180430101408) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "content", null: false
@@ -75,11 +75,14 @@ ActiveRecord::Schema.define(version: 20180429174136) do
   end
 
   create_table "sliders", force: :cascade do |t|
-    t.string "image", null: false
     t.string "caption", default: ""
     t.boolean "visible", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end
