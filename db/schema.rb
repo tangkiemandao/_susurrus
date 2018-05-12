@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180512092637) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "abouts", force: :cascade do |t|
     t.text "content", null: false
     t.text "address"
@@ -32,9 +35,9 @@ ActiveRecord::Schema.define(version: 20180512092637) do
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20180512092637) do
 
   create_table "portfolio_details", force: :cascade do |t|
     t.text "introduce"
-    t.integer "portfolio_id"
+    t.bigint "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "visible", default: true
@@ -97,4 +100,5 @@ ActiveRecord::Schema.define(version: 20180512092637) do
     t.datetime "photo_updated_at"
   end
 
+  add_foreign_key "portfolio_details", "portfolios"
 end
