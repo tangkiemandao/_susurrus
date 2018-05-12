@@ -10,10 +10,7 @@
 
 			<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-image">
 				<div class="agileaboutaits-image-1">
-          <%= image_tag about.image_first, alt: "Couture"  %>
-				</div>
-				<div class="agileaboutaits-image-2">
-          <%= image_tag about.image_second, alt: "Couture"  %>
+          <%= image_tag about.photo.url, alt: "Couture"  %>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -29,7 +26,7 @@
                 <h4 class="modal-title"><%= about.name %></h4>
 							</div>
 							<div class="modal-body">
-                <%= image_tag about.image_first, alt: "my self"  %>
+                <%= image_tag about.photo.url, alt: "my self"  %>
                 <p><%= about.content %></p>
 							</div>
 						</div>

@@ -1,5 +1,4 @@
 class Slider < ApplicationRecord
-  has_attached_file :image, styles: { small: "100x100" }
-  validates_attachment :image,
-                         content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+  has_attached_file :photo
+  validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end

@@ -23,7 +23,7 @@
 		<div class="w3slideraits">
 			<div class="camera_wrap text-center agileits camera_magenta_skin" id="camera_wrap_2">
         <% @sliders.each do |slider| %>
-          <div data-src="<%= image_path(slider.image)  %>" class="text-center agileits">
+          <div data-src="<%= slider.photo.url %>" class="text-center agileits">
 				  	<div class="camera_caption text-center agileits fadeFromBottom">
               <h3 class="text-center agileits"><%= slider.caption  %></h3>
 				  	</div>

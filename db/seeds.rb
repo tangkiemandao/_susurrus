@@ -26,18 +26,18 @@
 # end
 
 # About me
-# About.delete_all if About.count > 0
-# about = About.new
-# about.content = Faker::Lorem.paragraphs(1)
-# about.introduce = Faker::Lorem.sentence
-# about.name = "Kien"
-# about.image_first = "about-1.jpg"
-# about.image_second = "about-2.jpg"
-# about.address = Faker::Address.street_address
-# about.address = "0123456789"
-# about.email = Faker::Internet.email
-# about.quote = Faker::Lorem.sentence
-# about.save
+About.delete_all if About.count > 0
+about = About.new
+about.content = Faker::Lorem.paragraphs(1)
+about.introduce = Faker::Lorem.sentence
+about.name = "Kien"
+about.image_first = "about-1.jpg"
+about.image_second = "about-2.jpg"
+about.address = Faker::Address.street_address
+about.address = "0123456789"
+about.email = Faker::Internet.email
+about.quote = Faker::Lorem.sentence
+about.save
  #
  # Skill
 #  Skill.delete_all

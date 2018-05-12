@@ -1,13 +1,13 @@
 ActiveAdmin.register Portfolio do
  actions :all, :except => [:destroy]
- permit_params :name, :introduce, :image, :visible
+ permit_params :name, :introduce, :photo, :visible
 
  index do
    column :id
    column :name
    column :introduce
    column :image do |img|
-     image_tag(img.image, width: 50, height: 50)
+     image_tag(img.photo.url, width: 50, height: 50)
    end
    column :visible
    column :created_at
@@ -23,7 +23,7 @@ ActiveAdmin.register Portfolio do
      row :name
      row :introduce
      row :image do |img|
-       image_tag img.image, height: 100, width: 100
+       image_tag img.photo.url, height: 100, width: 100
      end
      row :visible
 
@@ -32,7 +32,7 @@ ActiveAdmin.register Portfolio do
        table_for details do
          column :introduce
          column :image do |img|
-           image_tag img.image, widht: 100, height: 100
+           image_tag img.photo.url, widht: 100, height: 100
          end
          column :visible
        end
@@ -44,7 +44,7 @@ ActiveAdmin.register Portfolio do
    f.inputs"Uploads" do
      f.input :name
      f.input :introduce
-     f.input :image, as: :file, required: true
+     f.input :photo, as: :file, required: true
      f.input :visible
    end
 
