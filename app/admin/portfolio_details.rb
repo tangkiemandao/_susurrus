@@ -1,13 +1,13 @@
 ActiveAdmin.register PortfolioDetail do
  actions :all
  belongs_to :portfolio, optional: true
- permit_params :image, :visible, :introduce, :portfolio_id
+ permit_params :photo, :visible, :introduce, :portfolio_id
 
  show do
    attributes_table do
      row :introduce
      row :image do |img|
-       image_tag img.image
+       image_tag img.photo.url
      end
    end
  end
@@ -17,7 +17,7 @@ ActiveAdmin.register PortfolioDetail do
    column :portfolio
    column :introduce
    column :image do |img|
-     image_tag(img.image, width: 50, height: 50)
+     image_tag(img.photo.url, width: 50, height: 50)
    end
    column :visible
    actions
@@ -26,7 +26,7 @@ ActiveAdmin.register PortfolioDetail do
  form do |f|
    f.inputs "Uploads" do
      f.input :portfolio_id, label: "Portfolio", as: :select, collection: Portfolio.pluck(:name, :id), required: true
-     f.input :image, required: true, as: :file
+     f.input :photo, required: true, as: :file
      f.input :introduce, required: true
    end
 

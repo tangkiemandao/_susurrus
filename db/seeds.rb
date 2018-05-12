@@ -26,18 +26,18 @@
 # end
 
 # About me
-# About.delete_all if About.count > 0
-# about = About.new
-# about.content = Faker::Lorem.paragraphs(1)
-# about.introduce = Faker::Lorem.sentence
-# about.name = "Kien"
-# about.image_first = "about-1.jpg"
-# about.image_second = "about-2.jpg"
-# about.address = Faker::Address.street_address
-# about.address = "0123456789"
-# about.email = Faker::Internet.email
-# about.quote = Faker::Lorem.sentence
-# about.save
+About.delete_all if About.count > 0
+about = About.new
+about.content = Faker::Lorem.paragraphs(1)
+about.introduce = Faker::Lorem.sentence
+about.name = "Kien"
+about.image_first = "about-1.jpg"
+about.image_second = "about-2.jpg"
+about.address = Faker::Address.street_address
+about.address = "0123456789"
+about.email = Faker::Internet.email
+about.quote = Faker::Lorem.sentence
+about.save
  #
  # Skill
 #  Skill.delete_all
@@ -74,7 +74,7 @@ index = 1
 Portfolio.all.each do |p|
   a = (1..10).to_a.sample
   10.times.each do |i|
-    img = p.details.build
+    img = p.portfolio_details.build
     img.introduce = Faker::Lorem.sentence
     img.image = "#{image_url}#{index}.jpg"
     img.save

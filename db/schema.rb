@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429174136) do
+ActiveRecord::Schema.define(version: 20180512092637) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "content", null: false
-    t.string "image_first", null: false
-    t.string "image_second", null: false
     t.text "address"
     t.string "phone"
     t.string "email", null: false
@@ -24,6 +22,10 @@ ActiveRecord::Schema.define(version: 20180429174136) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "introduce"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "active_admin_comments", force: :cascade do |t|
@@ -49,22 +51,28 @@ ActiveRecord::Schema.define(version: 20180429174136) do
   end
 
   create_table "portfolio_details", force: :cascade do |t|
-    t.string "image"
     t.text "introduce"
     t.integer "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "visible", default: true
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["portfolio_id"], name: "index_portfolio_details_on_portfolio_id"
   end
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.text "introduce"
-    t.string "image"
     t.boolean "visible"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -75,11 +83,18 @@ ActiveRecord::Schema.define(version: 20180429174136) do
   end
 
   create_table "sliders", force: :cascade do |t|
-    t.string "image", null: false
     t.string "caption", default: ""
     t.boolean "visible", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end
