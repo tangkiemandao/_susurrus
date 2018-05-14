@@ -9,8 +9,8 @@
 			</div>
 
 			<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-image">
-				<div class="agileaboutaits-image-1">
-          <%= image_tag about.photo.url, alt: "Couture"  %>
+				<div class="agileaboutaits-image-1 my-avatar">
+          <%= image_tag about.photo.url, alt: "Susurrus" %>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -20,14 +20,12 @@
 			<div class="tooltip-content">
 				<div class="modal fade features-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><%= about.name %></h4>
-							</div>
+						<div class="modal-content modal-flex">
+              <div class="modal-flex-title">
+                <%= about.content %>
+              </div>
 							<div class="modal-body">
                 <%= image_tag about.photo.url, alt: "my self"  %>
-                <p><%= about.content %></p>
 							</div>
 						</div>
 					</div>

@@ -64,16 +64,6 @@ a:focus, a:hover {
 	outline: none;
 }
 
-/*-- //Reset-Code --*/
-
-
-
-
-
-/*-- Index-Page-Styling --*/
-
-
-
 /*-- Header --*/
 
 .agileheaderw3ls {
@@ -81,8 +71,6 @@ a:focus, a:hover {
 }
 
 /*-- //Header --*/
-
-
 
 /*-- Slider --*/
 
@@ -183,6 +171,17 @@ section.cd-section {
 	-webkit-transition: -webkit-transform 0.3s 0s, visibility 0.3s 0s;
 	-moz-transition: -moz-transform 0.3s 0s, visibility 0.3s 0s;
 	transition: transform 0.3s 0s, visibility 0.3s 0s;
+}
+
+.modal-flex {
+  display: flex;
+  padding: 10px 5px;
+}
+.modal-body {
+  padding: 0;
+}
+.modal-content {
+  border-radius: 0;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -381,6 +380,14 @@ section.cd-section {
 	.cd-bouncy-nav a {
 		margin-bottom: 50px;
 	}
+  .modal-flex-title{
+    line-height: 20px;
+    max-width: 35%;
+  }
+  .my-avatar{
+    max-height: 406px;
+    max-width: 303px;
+  }
 }
 
 @-webkit-keyframes cd-move-in {
@@ -670,7 +677,6 @@ section.cd-section {
 .progressive-effects {
 	background: image-url("progress.jpg");
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 	
@@ -958,7 +964,7 @@ section.cd-section {
 			position: relative;
 			display: block;
 			width: 100%;
-			border: 3px solid #C7C7C7;
+			border: 1px solid #fff;
 		}
 
 		.gallery-bottom {
@@ -1365,13 +1371,13 @@ a.to-top {
 
 @media screen and (max-width: 1920px) {
 	.agileheaderw3ls {
-		padding-bottom: 952px;
+		padding-bottom: 100vh;
 	}
 }
 
 @media screen and (max-width: 1680px) {
 	.agileheaderw3ls {
-		padding-bottom: 832px;
+		padding-bottom: 100vh;
 	}
 }
 
@@ -1383,25 +1389,25 @@ a.to-top {
 
 @media screen and (max-width: 1440px) {
 	.agileheaderw3ls {
-		padding-bottom: 712px;
+		padding-bottom: 100vh;
 	}
 }
 
 @media screen and (max-width: 1366px) {
 	.agileheaderw3ls {
-		padding-bottom: 675px;
+		padding-bottom: 100vh;
 	}
 }
 
 @media screen and (max-width: 1280px) {
 	.agileheaderw3ls {
-		padding-bottom: 632px;
+		padding-bottom: 100vh;
 	}
 }
 
 @media screen and (max-width: 1080px) {
 	.agileheaderw3ls {
-		padding-bottom: 532px;
+		padding-bottom: 100vh;
 	}
 	.gallery-top figure.effect-bubba h4 {
 		padding-top: 15%;
@@ -1790,6 +1796,10 @@ a.to-top {
 	.footer {
 		padding-top: 35px;
 	}
+  .modal-flex-title{
+    line-height: 20px;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 533px) {
@@ -1824,6 +1834,14 @@ a.to-top {
 	.newsletter input[type="submit"] {
 		float: right;
 	}
+  .modal-flex {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .modal-flex-title{
+    padding: 20px;
+    line-height: 20px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1986,9 +2004,4 @@ a.to-top {
 		left: 25px;
 	}
 }
-
-
-
-
-
 /*-- //Responsive-Code --*/

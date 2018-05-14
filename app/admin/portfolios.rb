@@ -1,5 +1,5 @@
 ActiveAdmin.register Portfolio do
- actions :all, :except => [:destroy]
+ actions :all
  permit_params :name, :introduce, :photo, :visible
 
  index do
@@ -44,7 +44,11 @@ ActiveAdmin.register Portfolio do
    f.inputs"Uploads" do
      f.input :name
      f.input :introduce
-     f.input :photo, as: :file, required: true
+     if f.object.photo.present?
+      f.input :photo, as: :file, required: true, :hint => image_tag(f.object.photo.url) if f.object.photo.present?
+     else
+      f.input :photo, as: :file, required: true
+     end
      f.input :visible
    end
 

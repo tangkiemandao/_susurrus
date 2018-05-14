@@ -41,7 +41,7 @@
 		
 		loaderOpacity		: .8,	//0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
 		
-		loaderPadding		: 2,	//how many empty pixels you want to display between the loader and its background
+		loaderPadding		: 0,	//how many empty pixels you want to display between the loader and its background
 		
 		loaderStroke		: 7,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
 				
