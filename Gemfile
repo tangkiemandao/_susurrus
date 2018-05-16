@@ -15,6 +15,7 @@ gem 'activeadmin'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
