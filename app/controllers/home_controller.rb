@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @about      = About.first
     @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
+    set_session
   end
 
   def send_mail
@@ -14,6 +15,25 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.js
       format.html
+    end
+  end
+
+  private
+  def set_session
+    @portfolios ||= []
+    session[:portfolio] = {}
+
+    @portfolios.each do |portfolio|
+      session[:portfolio][portfolio.id] = {
+        id:              portfolio.id,
+        architect:       portfolio.architect,
+        location:        portfolio.location,
+        lead_architects: portfolio.lead_architects,
+        area:            portfolio.area,
+        name:            portfolio.name,
+        photographs:     portfolio.photographs,
+        url:             portfolio.photo.url
+      }
     end
   end
 end

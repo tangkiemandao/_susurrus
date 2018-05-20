@@ -15,6 +15,7 @@ gem 'activeadmin'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'settingslogic'
 gem 'sendgrid-ruby'
 
 group :development, :test do

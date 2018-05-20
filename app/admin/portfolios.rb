@@ -1,11 +1,17 @@
 ActiveAdmin.register Portfolio do
  actions :all
- permit_params :name, :introduce, :photo, :visible
+ permit_params :name, :introduce, :photo, :visible, :area,
+               :architect, :location, :lead_architects, :photographs
 
  index do
    column :id
    column :name
    column :introduce
+   column :architect
+   column :location
+   column :lead_architects
+   column :area
+   column :photographs
    column :image do |img|
      image_tag(img.photo.url, width: 50, height: 50)
    end
@@ -22,6 +28,11 @@ ActiveAdmin.register Portfolio do
    attributes_table do
      row :name
      row :introduce
+     row :architect
+     row :location
+     row :lead_architects
+     row :area
+     row :photographs
      row :image do |img|
        image_tag img.photo.url, height: 100, width: 100
      end
@@ -30,7 +41,6 @@ ActiveAdmin.register Portfolio do
      panel "Images" do
        details = portfolio.portfolio_details
        table_for details do
-         column :introduce
          column :image do |img|
            image_tag img.photo.url, widht: 100, height: 100
          end
@@ -44,6 +54,11 @@ ActiveAdmin.register Portfolio do
    f.inputs"Uploads" do
      f.input :name
      f.input :introduce
+     f.input :architect
+     f.input :location, as: :select, collection: Settings.cities
+     f.input :lead_architects
+     f.input :area, as: :number
+     f.input :photographs
      if f.object.photo.present?
       f.input :photo, as: :file, required: true, :hint => image_tag(f.object.photo.url) if f.object.photo.present?
      else

@@ -1,5 +1,6 @@
 <!-- Portfolio -->
 <div class="portfolio" id="portfolio">
+  <div id="modal-details"></div>
   <div class="container">
   	<h3>Portfolio</h3>
   	<div class="tabs tabs-style-bar">
@@ -14,7 +15,7 @@
   				<div class="gallery-grids">
             <% portfolios.each do |portfolio| %>
   					  <div class="col-md-3 col-sm-4 gallery-top">
-                <a href="<%= portfolio.photo.url %>" class="swipebox_<%= portfolio.id %>" title="<%= portfolio.introduce %>">
+                <a href="#" data-session="<%= session[:portfolio][portfolio.id].to_json %>"  class="modal-pr" title="<%= portfolio.introduce %>">
   					  		<figure class="effect-bubba">
                     <img src="<%= portfolio.photo.url  %>" alt="" class="img-responsive img-portfolio" style="min-height: 258px; max-height: 258px">
   					  			<figcaption>
