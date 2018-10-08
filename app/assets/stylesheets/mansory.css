@@ -1,0 +1,7 @@
+.grid-sizer, .grid-item {
+    width: 25%;
+    border: 2px solid #ffffff;
+}
+.grid-item--width2 {
+    width: 40%; 
+}

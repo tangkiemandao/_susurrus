@@ -4,18 +4,16 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: susurrus_development
-  username: postgres
-  password: postgres
-  host: localhost
-  port: 5432
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test:
-  <<: *default
-  database: susurrus_test
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
 production:
   <<: *default

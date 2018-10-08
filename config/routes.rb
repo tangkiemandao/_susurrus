@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'home#index'
   controller :home do
     get 'send_mail', action: :send_mail
+    get 'photos', action: :photo
   end
 end
