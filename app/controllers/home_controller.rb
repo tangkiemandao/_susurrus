@@ -25,8 +25,7 @@ class HomeController < ApplicationController
                  http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-bong-hong-dep_052333650.jpg
                  http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-canh-hoa-dep_052333993.jpg
                  http://file.vforum.vn/hinh/2018/03/hinh-nen-dien-thoai-dep-nhat-full-hd-cho-dien-thoai-iphone-android-19.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-cay-cau-thien-nhien-dep_052334071.jpg
-                  ]
+                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-cay-cau-thien-nhien-dep_052334071.jpg]
     @photos = [photos, photos].flatten
   end
 
