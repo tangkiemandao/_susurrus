@@ -2,6 +2,27 @@
     width: 25%;
     border: 2px solid #ffffff;
 }
+.grid-item {
+    float: left;
+}
+.grid-item img {
+    display: block;
+    width: 100%;
+}
+/*.grid-gutter-sizer {*/
+/*    width: 2%; */
+/*}*/
+/* hide by default */
+.grid.are-images-unloaded {
+  opacity: 0;
+}
 .grid-item--width2 {
     width: 40%; 
+}
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
 }

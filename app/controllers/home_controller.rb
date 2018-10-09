@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
     set_session
+    redirect_to photos_url
   end
 
   def send_mail
@@ -19,14 +20,14 @@ class HomeController < ApplicationController
   end
   
   def photo
-    photos = %w[http://thuthuatphanmem.vn/uploads/2018/04/09/tong-hop-50-hinh-nen-dep-nhat-cho-may-tinh_042207454.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-anh-nang-binh-minh_052333541.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-bong-hoa-dep-day-suc-song_052333603.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-bong-hong-dep_052333650.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-canh-hoa-dep_052333993.jpg
-                 http://file.vforum.vn/hinh/2018/03/hinh-nen-dien-thoai-dep-nhat-full-hd-cho-dien-thoai-iphone-android-19.jpg
-                 http://thuthuatphanmem.vn/uploads/2018/04/10/hinh-nen-cay-cau-thien-nhien-dep_052334071.jpg]
-    @photos = [photos, photos].flatten
+    photos = YAML.load_file(Rails.root.join('app/models/active_yaml/photos.yml'))
+    @pages = photos.count / 10
+    range = set_range
+    if range[0] > photos.length
+      @photos = []
+    else
+      @photos = photos[range[0]..range[1]].compact
+    end
   end
 
   private
@@ -46,5 +47,16 @@ class HomeController < ApplicationController
         url:             portfolio.photo.url
       }
     end
+  end
+  
+  def get_page
+    params[:page].to_i <= 1 ? 0 : params[:page].to_i
+  end
+  
+  def set_range
+    limit = 20
+    start_photo = limit * get_page
+    end_photo   = limit * (get_page + 1)
+    [start_photo, end_photo]
   end
 end
