@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  LIMIT = 5
   def index
     @photos     = Photo.where(visible: true)
     @sliders    = Slider.where(visible: true)
@@ -21,11 +22,12 @@ class HomeController < ApplicationController
   
   def photo
     photos = YAML.load_file(Rails.root.join('app/models/active_yaml/photos.yml'))
-    @pages = photos.count / 10
+    @pages = photos.count / LIMIT
     range = set_range
     if range[0] > photos.length
       @photos = []
     else
+      @next_page = get_page < 1 ? (get_page + 2) : (get_page + 1)
       @photos = photos[range[0]..range[1]].compact
     end
   end
@@ -54,9 +56,12 @@ class HomeController < ApplicationController
   end
   
   def set_range
-    limit = 20
-    start_photo = limit * get_page
-    end_photo   = limit * (get_page + 1)
+    start_photo = LIMIT * get_page
+    end_photo   = LIMIT * (get_page + 1)
     [start_photo, end_photo]
+  end
+
+  def max_page(total)
+    total / LIMIT
   end
 end

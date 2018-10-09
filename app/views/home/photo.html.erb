@@ -12,8 +12,8 @@ Max page: <%= @pages %>
     </div>
 </div>
 
-<% if params[:page].to_i <= 2 %>
+<% if @next_page %>
     <nav id="page-nav" style="display: none;">
-      <a href="/photos/page/2"></a>
+      <a href="/photos/page/<%= @next_page %>"></a>
     </nav>
 <% end %>
