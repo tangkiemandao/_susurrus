@@ -15,7 +15,7 @@ class InstagramApi < Instagram::Client
   def images_url(data_json)
     images = []
     data_json.each do |data|
-      images << { original_link: data.link, link: data.images.standard_resolution.url }
+      images << { caption: data.caption.text, link: data.images.standard_resolution.url }
     end
 
     images
@@ -32,7 +32,8 @@ class InstagramApi < Instagram::Client
     images_url(data) << write_image_url(data)
   end
 
-  def write_yml(data)
+  def fetch_all_data
+    data = user_recent_media
     images_url = []
     images_url << images_url(data)
     images_url << write_image_url(data)
