@@ -19,6 +19,7 @@ gem 'settingslogic'
 gem 'sendgrid-ruby'
 gem 'devise'
 gem 'instagram'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
