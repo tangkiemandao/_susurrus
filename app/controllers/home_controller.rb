@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  LIMIT = 5
   def index
     @photos     = Photo.where(visible: true)
     @sliders    = Slider.where(visible: true)
@@ -7,7 +6,6 @@ class HomeController < ApplicationController
     @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
     set_session
-    redirect_to photos_url
   end
 
   def send_mail
@@ -21,15 +19,7 @@ class HomeController < ApplicationController
   end
   
   def photo
-    photos = YAML.load_file(Rails.root.join('app/models/active_yaml/photos.yml'))
-    @pages = photos.count / LIMIT
-    range = set_range
-    if range[0] > photos.length
-      @photos = []
-    else
-      @next_page = get_page < 1 ? (get_page + 2) : (get_page + 1)
-      @photos = photos[range[0]..range[1]].compact
-    end
+    @photos = Photo.page params[:page]
   end
 
   private
@@ -49,19 +39,5 @@ class HomeController < ApplicationController
         url:             portfolio.photo.url
       }
     end
-  end
-  
-  def get_page
-    params[:page].to_i <= 1 ? 0 : params[:page].to_i
-  end
-  
-  def set_range
-    start_photo = LIMIT * get_page
-    end_photo   = LIMIT * (get_page + 1)
-    [start_photo, end_photo]
-  end
-
-  def max_page(total)
-    total / LIMIT
   end
 end
