@@ -18,7 +18,8 @@ class HomeController < ApplicationController
   end
   
   def photo
-    @photos = Photo.page params[:page]
+    @sliders = Slider.where(visible: true)
+    @photos  = Photo.page params[:page]
   end
 
   private
