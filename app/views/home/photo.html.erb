@@ -5,8 +5,9 @@ Hello this is photo page
         <div class="grid-sizer"></div>
       <% @photos.each do |photo| %>
          <div class="grid-item">
-            <%= image_tag photo, alt: "random" %>
+            <%= image_tag photo.link, alt: "random" %>
           </div>
       <% end %>
     </div>
 </div>
+<%= paginate @photos %>
