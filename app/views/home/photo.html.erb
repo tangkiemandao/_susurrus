@@ -1,6 +1,5 @@
-
-Hello this is photo page
-<div class="container" data-masonry="{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }">
+<%= render "shared/header", sliders: @sliders, hide_menu: true %>
+<div class="container">
     <div class="grid">
         <div class="grid-sizer"></div>
       <% @photos.each do |photo| %>
@@ -11,3 +10,5 @@ Hello this is photo page
     </div>
 </div>
 <%= paginate @photos %>
+<%= render "shared/contact" %>
+<%= render "shared/footer", about: @about  %>

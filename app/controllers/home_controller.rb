@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @photos     = Photo.where(visible: true)
     @sliders    = Slider.where(visible: true)
     @about      = About.first
     @skills     = Skill.all
@@ -19,7 +18,8 @@ class HomeController < ApplicationController
   end
   
   def photo
-    @photos = Photo.page params[:page]
+    @sliders = Slider.where(visible: true)
+    @photos  = Photo.page params[:page]
   end
 
   private
