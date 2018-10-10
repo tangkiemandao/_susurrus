@@ -822,6 +822,7 @@ DEPENDENCIES
   figaro
   instagram
   jbuilder (~> 2.5)
+  kaminari
   listen (>= 3.0.5, < 3.2)
   paperclip
   pg
