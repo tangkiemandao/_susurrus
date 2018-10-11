@@ -26,6 +26,9 @@
   text-align: center;
   color: #777;
 }
+.mr-top-2x{
+  margin-top: 20px;
+}
 
 @media only screen and (max-width: 40em) { 
     .grid-sizer, .grid-item {

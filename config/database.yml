@@ -4,10 +4,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: susurrus_development
   pool: 5
   timeout: 5000
+  username: postgres
+  password: postgres
 
 test:
   adapter: sqlite3
