@@ -20,6 +20,7 @@ gem 'sendgrid-ruby'
 gem 'devise'
 gem 'instagram'
 gem 'kaminari'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
