@@ -404,7 +404,8 @@ section.cd-section {
     object-fit: cover;
   }
   .dflex {
-    display: flex;
+	display: flex;
+	min-height: 320px;
     padding-left: 3px;
     padding-right: 5px;
   }
