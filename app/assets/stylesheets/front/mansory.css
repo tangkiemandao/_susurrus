@@ -1,13 +1,16 @@
 .grid-sizer, .grid-item {
-    width: 33%;
-    border: 2px solid #ffffff;
+  width: 33%;
+  border: 2px solid #ffffff;
 }
 .grid-item {
     float: left;
 }
+.grid-item-home {
+  width: 25%;
+}
 .grid-item img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 /*.grid-gutter-sizer {*/
 /*    width: 2%; */

@@ -2,22 +2,20 @@
 <div class="w3threespecialityw3ls" id="w3threespecialityw3ls">
 	<div class="container">
 		<h2>What I Capture</h2>
-		<div class="grid cs-style-3">
-      <% photos.each do |photo|  %>
-			 <div class="col-md-4 col-sm-4 w3threespecialityw3ls-grid grid1">
-			 	<figure>
-			 		<div class="w3threespecialityw3ls-info">
-            <%= image_tag photo.link, alt: photo.caption %>
-			 		</div>
-			 		<figcaption>
-            <h3><%= photo.caption  %></h3>
-			 		</figcaption>
-			 	</figure>
-			 </div>
-      <% end  %>
+      <div class="container mr-top-2x">
+          <div class="grid">
+              <div class="grid-sizer"></div>
+            <% photos.each do |photo| %>
+               <div class="grid-item">
+                  <%= image_tag photo.link, alt: "random" %>
+                </div>
+            <% end %>
+          </div>
+      </div>
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
+    <h3><%= link_to 'More', "/photos" %></h3>
 	</div>
 </div>
 <!-- //Speciality -->
