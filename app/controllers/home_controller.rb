@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @about      = About.first
     @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
-    @photos = Photo.limit(9)
+    @photos = Photo.limit(8)
     set_session
   end
 
