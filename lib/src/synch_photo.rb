@@ -15,6 +15,7 @@ class SynchPhoto
     InstagramApi.new.fetch_all_data.flatten.compact.each do |photo|
       photos << Photo.new(caption: photo[:caption],
                           link: photo[:link],
+                          link_home: photo[:link_home],
                           visible: true
                          )
     end

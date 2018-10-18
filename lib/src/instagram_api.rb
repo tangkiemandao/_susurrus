@@ -15,7 +15,9 @@ class InstagramApi < Instagram::Client
   def images_url(data_json)
     images = []
     data_json.each do |data|
-      images << { caption: data.caption.text, link: data.images.standard_resolution.url }
+      images << { caption: data.caption.text,
+                  link: data.images.standard_resolution.url,
+                  link_home: data.images.low_resolution.url }
     end
 
     images

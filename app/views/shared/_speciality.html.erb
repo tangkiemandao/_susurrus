@@ -3,19 +3,22 @@
 	<div class="container">
 		<h2>What I Capture</h2>
       <div class="container mr-top-2x">
-          <div class="grid">
-              <div class="grid-sizer"></div>
+          <div class="row row-eq-height">
             <% photos.each do |photo| %>
-               <div class="grid-item">
-                  <%= image_tag photo.link, alt: "random" %>
+               <div class="col-md-3 col-sm-3 dflex">
+                  <%= image_tag photo.link_home, alt: "random", class: "photo-home" %>
                 </div>
             <% end %>
           </div>
+          <h4 class="more-image">
+            <%= link_to "/photos" do %>
+              <span class="glyphicon glyphicon-arrow-right"></span>More images
+            <% end %>
+          </h4>
       </div>
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
-    <h3><%= link_to 'More', "/photos" %></h3>
 	</div>
 </div>
 <!-- //Speciality -->

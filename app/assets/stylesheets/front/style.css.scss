@@ -78,11 +78,11 @@ a:focus, a:hover {
 	font-weight: 100;
 	
 	/*--agileits--*/
-	font-size: 50px;
+	font-size: 20px;
 }
 
 .camera_caption h3 a {
-	color: #009688;
+	color: #E85024;
 }
 
 /*-- //Slider --*/
@@ -110,7 +110,7 @@ section.cd-section {
 }
 
 .no-touch .cd-bouncy-nav-trigger:hover {
-	background: #009688;
+	background: #E85024;
 	color: #FFF;
 }
 
@@ -399,6 +399,21 @@ section.cd-section {
     max-height: 406px;
     max-width: 303px;
   }
+  .photo-home {
+    min-height: 100%;
+    object-fit: cover;
+  }
+  .dflex {
+    display: flex;
+    padding-left: 3px;
+    padding-right: 5px;
+  }
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 @-webkit-keyframes cd-move-in {
@@ -518,7 +533,7 @@ section.cd-section {
 
 .agileaboutaits h1 {
 	text-align: left;
-	color: #009688;
+	color: #E85024;
 	margin-bottom: 30px;
 	font-size: 40px;
 }
@@ -542,7 +557,7 @@ section.cd-section {
 }
 
 .agileaboutaits button.btn:hover {
-	background-color: #009688;
+	background-color: #E85024;
 	color: #FFF;
 }
 
@@ -676,7 +691,7 @@ section.cd-section {
 
 .w3threespecialityw3ls-info h3 {
 	margin-top: 20px;
-	color: #009688;
+	color: #E85024;
 }
 
 /*-- //Speciality --*/
@@ -729,7 +744,7 @@ section.cd-section {
 		-webkit-box-shadow: none;
 		text-align: right;
 		padding-right: 12px;
-		background-color: #009688;
+		background-color: #E85024;
 		font-size: 12px;
 		
 		/*--agileits--*/
@@ -765,7 +780,7 @@ section.cd-section {
 		font-family: 'Roboto', sans-serif;
 		font-size: 35px;
 		font-weight: 700;
-		color: #009688;
+		color: #E85024;
 		margin-bottom: 10px;
 	}
 
@@ -1105,7 +1120,7 @@ section.cd-section {
 /*-- Booking --*/
 
 .w-booking {
-	padding: 100px 0;
+	padding: 10px 0;
 	background-color: #EEE;
 }
 
@@ -1186,6 +1201,16 @@ input.margin-right {
 .send-button.agileits.text-center {
 	text-align: center;
 }
+.more-image {
+	margin-top: 10px;
+	text-align: left;
+	a,a:hover{
+		color: #E85024;
+	}
+	span {
+		margin-right: 5px;
+	}
+}
 
 /*-- //Booking --*/
 
@@ -1207,7 +1232,7 @@ input.margin-right {
 }
 
 .footer h3 {
-	color: #009688;
+	color: #E85024;
 	font-size: 35px;
 	margin-bottom: 40px;
 }
@@ -1257,7 +1282,7 @@ address {
 .footer span.glyphicon {
 	font-weight: bold;
 	margin-right: 5px;
-	color: #009688;
+	color: #E85024;
 }
 
 .email a {
@@ -1265,7 +1290,7 @@ address {
 }
 
 .email a:hover {
-	color: #1a5651;
+	color: #E85024;
 }
 
 .newsletter input[type="text"] {
@@ -1279,7 +1304,7 @@ address {
 }
 
 .newsletter input[type="submit"] {
-	background-color: #009688;
+	background-color: #E85024;
 	border: none;
 	outline: none;
 	padding: 8px 21px;
@@ -1291,7 +1316,7 @@ address {
 }
 
 .newsletter input[type="submit"]:hover {
-	background-color: #1a5651;
+	background-color: #E85024;
 }
 
 .footer-grids p {
@@ -1316,7 +1341,7 @@ address {
 }
 
 .copyright a:hover {
-	color: #009688;
+	color: #E85024;
 }
 
 a.to-top {
@@ -1445,10 +1470,10 @@ a.to-top {
 		padding-bottom: 504px;
 	}
 	.camera_caption > div {
-		padding: 35px 20px;
+		padding: 20px 20px;
 	}
 	.camera_caption h3 {
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.agileaboutaitsabout, .w3threespecialityw3ls, .progressive-effects, .portfolio, .w-booking {
 		padding: 75px 0;
@@ -1606,7 +1631,7 @@ a.to-top {
 		padding-bottom: 376px;
 	}
 	.camera_caption h3 {
-		font-size: 35px;
+		font-size: 20px;
 	}
 	.agileaboutaitsabout, .w3threespecialityw3ls, .progressive-effects, .portfolio, .w-booking {
 		padding: 50px 0;
