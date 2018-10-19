@@ -1226,7 +1226,7 @@ input.margin-right {
 	background: image-url("footer.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: center 150px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -1332,6 +1332,7 @@ address {
 	text-align: center;
 	border-top: 1px solid #CCC;
 	color: #FFF;
+	min-height: 130px;
 }
 
 .copyright p {
@@ -1502,7 +1503,7 @@ a.to-top {
 	.numscroller {
 		margin-bottom: 5px;
 	}
-	.portfolio h3, .w-booking h3 {
+	.w3threespecialityw3ls h3, .w-booking h3, .more-image {
 		margin-left: 15px;
 	}
 	.gallery-top figure.effect-bubba h4 {
@@ -1861,7 +1862,7 @@ a.to-top {
 		padding: 0;
 	}
 	.footer-grid-1, .footer-grid-2 {
-		height: 150px;
+		margin-bottom: 20px;
 	}
 	.newsletter {
 		margin-top: 0;
