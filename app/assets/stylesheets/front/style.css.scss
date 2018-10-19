@@ -1225,8 +1225,8 @@ input.margin-right {
 .footer {
 	background: image-url("footer.jpg");
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center 150px;
+	// background-attachment: fixed;
+	background-position: center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -1684,6 +1684,20 @@ a.to-top {
 	}
 	.copyright {
 		padding: 30px 10px;
+	}
+
+	.row-eq-height {
+		display: flex;
+		margin: 15px;
+	}
+	.dflex {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.photo-home{
+		width: 100%;
+		object-fit: cover;
+		min-height: 165px;
 	}
 }
 

@@ -35,7 +35,7 @@
 
 @media only screen and (max-width: 40em) { 
     .grid-sizer, .grid-item {
-        width: 48%;
+        width: 50%;
         border: 2px solid #ffffff;
     }
     /* .container{
