@@ -582,8 +582,7 @@ section.cd-section {
 /*-- Speciality --*/
 
 .w3threespecialityw3ls {
-	background-color: #EEE;
-	padding: 100px 0;
+	padding: 50px 0;
 }
 .w3threespecialityw3ls .container {
 	padding: 0;
@@ -803,7 +802,8 @@ section.cd-section {
 /*-- Portfolio --*/
 
 .portfolio {
-	padding: 100px 0;
+	padding: 50px 0;
+	background-color: #EEE;
 }
 
 .portfolio h3 {
@@ -1124,7 +1124,7 @@ section.cd-section {
 /*-- Booking --*/
 
 .w-booking {
-	padding: 10px 0;
+	padding: 50px 0;
 	background-color: #EEE;
 }
 
@@ -1135,7 +1135,7 @@ section.cd-section {
 }
 
 .w-booking .container {
-	padding: 0;
+	padding: 0 15px;
 }
 
 .booking-form-aits {
@@ -1830,7 +1830,7 @@ a.to-top {
 		padding-bottom: 276px;
 	}
 	.agileaboutaitsabout, .w3threespecialityw3ls, .progressive-effects, .portfolio, .w-booking {
-		padding: 35px 0;
+		padding: 15px 0;
 	}
 	.agileaboutaits h1, .w3threespecialityw3ls h3, #skills h3, .portfolio h3, .w-booking h3, .footer h3 {
 		font-size: 30px;
