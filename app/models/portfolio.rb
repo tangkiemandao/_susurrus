@@ -5,4 +5,7 @@ class Portfolio < ApplicationRecord
 
   has_attached_file :photo
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  has_attached_file :pdf
+  validates_attachment_content_type :pdf, :content_type => ["application/pdf"]
 end
