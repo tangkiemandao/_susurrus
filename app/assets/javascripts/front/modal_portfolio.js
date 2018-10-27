@@ -8,7 +8,7 @@ jQuery(function($) {
     $('#modal-portfolio').remove();
     $('#modal-details').append(modal);
     $('#modal-portfolio').modal('toggle');
-    $(`.swipebox_${details['id']}`).swipebox();
+    // $(`.swipebox_${details['id']}`).swipebox();
 	});
 
   // generate modal
@@ -48,7 +48,7 @@ jQuery(function($) {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <a href="${data['url']}" class="btn btn-primary swipebox_${data['id']}">Next</a>
+            <a href="${data['pdf']}" class="btn btn-primary" target="_blank">Details</a>
           </div>
         </div>
       </div>

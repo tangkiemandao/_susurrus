@@ -37,7 +37,8 @@ class HomeController < ApplicationController
         area:            portfolio.area,
         name:            portfolio.name,
         photographs:     portfolio.photographs,
-        url:             portfolio.photo.url
+        url:             portfolio.photo.url,
+        pdf:             portfolio.pdf.url
       }
     end
   end
