@@ -9,9 +9,8 @@ class HomeController < ApplicationController
   end
 
   def send_mail
-    mail  = { email: params[:Email], name:  params[:Name], content: params[:Message] }
-    @name = mail[:name]
-    MessageMailer.send_message(mail).deliver
+    MessageMailer.send_message(get_mail_params).deliver if check_mail_validate.blank?
+    @name = get_mail_params[:name]
     respond_to do |format|
       format.js
       format.html
@@ -41,5 +40,18 @@ class HomeController < ApplicationController
         pdf:             portfolio.pdf.url
       }
     end
+  end
+
+  def get_mail_params
+    @mail ||= { email: params[:Email], name:  params[:Name], content: params[:Message] }
+  end
+
+  def check_mail_validate
+    mail = get_mail_params
+    @message_errors = ""
+    @message_errors = "Please input valid your email" if mail[:email].blank? || mail[:email].match(URI::MailTo::EMAIL_REGEXP).nil?
+    @message_errors = "Please input your name" if mail[:name].blank?
+    @message_errors = "Please input your message" if mail[:content].blank?
+    @message_errors
   end
 end

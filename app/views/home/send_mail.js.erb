@@ -1,2 +1,7 @@
-jQuery("body").append("<%= j render(:partial => 'home/inform', :locals => { name: @name }) %>");
-jQuery("#inform").modal('toggle');
+<% if @message_errors.blank?  %>
+  jQuery("body").append("<%= j render(:partial => 'home/inform', :locals => { name: @name }) %>");
+  jQuery("#inform").modal('toggle');
+<% else %>
+  jQuery("body").append("<%= j render(:partial => 'home/error', :locals => { message_errors: @message_errors }) %>");
+  jQuery("#inform").modal('toggle');
+<% end %>
