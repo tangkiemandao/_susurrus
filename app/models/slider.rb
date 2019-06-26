@@ -1,5 +1,5 @@
 class Slider < ApplicationRecord
-  has_attached_file :photo, :styles => { :medium => "3600x1800>" }, :processors => [:cropper], :default_url => "/no_image_available.svg"
+  has_attached_file :photo, storage: :imgur, :styles => { :medium => "3600x1800>" }, :processors => [:cropper], :default_url => "/no_image_available.svg"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   attr_accessor  :crop_x, :crop_y, :crop_w, :crop_h, :processed
