@@ -5,7 +5,7 @@ ActiveAdmin.register Slider do
  # edit or new page
  form do |f|
    f.inputs "Uploads" do
-     f.input :photo, required: true, as: :file, hint: image_tag(f.object.photo.url, id: "preview-img", height: "auto", width: "100%").html_safe
+     f.input :photo, required: true, as: :file, hint: image_tag(f.object.photo.url(size: nil), id: "preview-img", height: "auto", width: "100%").html_safe
      f.input :caption, required: true
      f.input :visible, as: :radio, collection: [ true, false ]
      f.input :crop_x, as: :hidden
@@ -22,7 +22,7 @@ ActiveAdmin.register Slider do
    column :id
    column :caption
    column :photo do |img|
-     image_tag(img.photo.url, width: 50, height: 50)
+     image_tag(img.photo.url(size: nil), width: 50, height: 50)
    end
    column :visible
    column :created_at
@@ -36,7 +36,7 @@ ActiveAdmin.register Slider do
      row :id
      row :caption
      row :image do |img|
-       image_tag img.photo.url
+       image_tag img.photo.url(size: nil)
      end
      row :created_at
      row :updated_at

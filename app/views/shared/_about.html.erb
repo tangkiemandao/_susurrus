@@ -10,7 +10,7 @@
 
 			<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-image">
 				<div class="agileaboutaits-image-1 my-avatar">
-          <%= image_tag about.photo.url, alt: "Susurrus" %>
+          <%= image_tag about.photo.url(size: nil), alt: "Susurrus" %>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -25,7 +25,7 @@
                 <%= about.content %>
               </div>
 							<div class="modal-body">
-                <%= image_tag about.photo.url, alt: "my self"  %>
+                <%= image_tag about.photo.url(size: nil), alt: "my self"  %>
 							</div>
 						</div>
 					</div>

@@ -14,7 +14,7 @@ ActiveAdmin.register Portfolio do
    column :photographs
    column :pdf
    column :image do |img|
-     image_tag(img.photo.url, width: 50, height: 50)
+     image_tag(img.photo.url(size: nil), width: 50, height: 50)
    end
    column :visible
    column :created_at
@@ -38,7 +38,7 @@ ActiveAdmin.register Portfolio do
        link_to "View", link.pdf.url, target: "_blank"
      end
      row :image do |img|
-       image_tag img.photo.url, height: 100, width: 100
+       image_tag img.photo.url(size: nil), height: 100, width: 100
      end
      row :visible
    end
@@ -54,7 +54,7 @@ ActiveAdmin.register Portfolio do
      f.input :area, as: :number
      f.input :photographs
      if f.object.photo.present?
-      f.input :photo, as: :file, required: true, :hint => image_tag(f.object.photo.url) if f.object.photo.present?
+      f.input :photo, as: :file, required: true, :hint => image_tag(f.object.photo.url(size: nil)) if f.object.photo.present?
      else
       f.input :photo, as: :file, required: true
      end

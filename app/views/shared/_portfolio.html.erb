@@ -17,14 +17,14 @@
   					  <div class="col-md-3 col-sm-4 gallery-top">
                 <a href="#" data-session="<%= session[:portfolio][portfolio.id].to_json %>"  class="modal-pr" title="<%= portfolio.introduce %>">
   					  		<figure class="effect-bubba">
-                    <img src="<%= portfolio.photo.url  %>" alt="" class="img-responsive img-portfolio" style="min-height: 258px; max-height: 258px">
+                    <img src="<%= portfolio.photo.url(size: nil)  %>" alt="" class="img-responsive img-portfolio" style="min-height: 258px; max-height: 258px">
   					  			<figcaption>
                       <h4><%= portfolio.name  %></h4>
   					  			</figcaption>
   					  		</figure>
   					  	</a>
                 <% portfolio.portfolio_details.each do |detail|  %>
-                  <a href="<%= detail.photo.url %>" class="swipebox_<%= portfolio.id %> hide" title="<%= detail.introduce %>"></a>
+                  <a href="<%= detail.photo.url(size: nil) %>" class="swipebox_<%= portfolio.id %> hide" title="<%= detail.introduce %>"></a>
                 <% end %>
   					  </div>
             <% end %>
