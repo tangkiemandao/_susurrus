@@ -7,7 +7,7 @@ ActiveAdmin.register PortfolioDetail do
    attributes_table do
      row :introduce
      row :image do |img|
-       image_tag img.photo.url
+       image_tag img.photo.url(size: nil)
      end
    end
  end
@@ -17,7 +17,7 @@ ActiveAdmin.register PortfolioDetail do
    column :portfolio
    column :introduce
    column :image do |img|
-     image_tag(img.photo.url, width: 50, height: 50)
+     image_tag(img.photo.url(size: nil), width: 50, height: 50)
    end
    column :visible
    actions
