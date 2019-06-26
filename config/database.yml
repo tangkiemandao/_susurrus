@@ -1,24 +1,28 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: mysql2
+  encoding: utf8
+  host: localhost
+  port: 3306
+  socket: /var/run/mysqld/mysqld.sock
 
-development:
-  adapter: postgresql
-  database: susurrus_development
+default_local: &default_local
+  <<: *default
+  charset: utf8mb4_unicode_ci
   pool: 5
   timeout: 5000
-  username: postgres
-  password: postgres
+  username: root
+  password: root
+
+development:
+  <<: *default_local
+  database: susurrus_development
+  pool: 5
 
 test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
-  timeout: 5000
 
 production:
-  <<: *default
+  <<: *default_local
   database: susurrus_production
-  username: postgres
-  password: <%= ENV['TEST_PG_DATABASE_PASSWORD'] %>

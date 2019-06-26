@@ -13,7 +13,7 @@ class SynchPhoto
   def parse_data
     photos = []
     InstagramApi.new.fetch_all_data.flatten.compact.each do |photo|
-      photos << Photo.new(caption: photo[:caption],
+      photos << Photo.new(caption: '',
                           link: photo[:link],
                           link_home: photo[:link_home],
                           visible: true

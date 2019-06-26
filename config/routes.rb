@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, only: [:sessions]
+  devise_for :users#, only: [:sessions, :new, :create]
   ActiveAdmin.routes(self)
   # get 'home/index'
   root 'home#index'
