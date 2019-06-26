@@ -16,7 +16,6 @@ default_local: &default_local
 development:
   <<: *default_local
   database: susurrus_development
-  pool: 5
 
 test:
   adapter: sqlite3
