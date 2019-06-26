@@ -13,7 +13,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'activeadmin'
 gem 'paperclip'
-gem 'aws-sdk'
 gem 'figaro'
 gem 'settingslogic'
 gem 'sendgrid-ruby'
@@ -21,6 +20,11 @@ gem 'devise'
 gem 'instagram'
 gem 'kaminari'
 gem "mini_magick"
+gem 'paperclip-imgur'
+gem 'imgur-api'
+gem 'imgurapi', git: 'git://github.com/trungle1612/imgur'
+gem 'pry-byebug'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -34,5 +38,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
