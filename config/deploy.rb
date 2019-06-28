@@ -16,16 +16,10 @@ set :rbenv_path, '/home/ubuntu/.rbenv'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :linked_files, %w{config/imgur.yml config/application.yml}
+set :whenever_environment, fetch(:stage) # This fetches the appropriate environment
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
 namespace :deploy do    
-  desc 'Symlinks Secret.yml to the release path'
-  task :update_cron do
-    on roles(:app) do
-      execute :bundle, :exec, "whenever --update-crontab #{fetch(:application)}"
-   end
-  end
-
-  after  :finishing,    :update_cron
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
