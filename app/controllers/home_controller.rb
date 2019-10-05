@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
     @photos     = Photo.limit(8).order("RAND()")
+
     set_session
   end
 
@@ -22,7 +23,14 @@ class HomeController < ApplicationController
     @photos  = Photo.page params[:page]
   end
 
+  def details
+    @sliders = Slider.where(visible: true)
+    @portfolio = Portfolio.find_by(id: params[:portfolio_id])
+    @portfolio_details = @portfolio.try(:portfolio_details) || []
+  end
+
   private
+
   def set_session
     @portfolios ||= []
     session[:portfolio] = {}

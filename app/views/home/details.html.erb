@@ -1,0 +1,13 @@
+<%= render "shared/header", sliders: @sliders, hide_menu: true %>
+<div class="container mr-top-2x">
+    <div class="grid">
+        <div class="grid-sizer"></div>
+      <% @portfolio_details.each do |portfolio| %>
+         <div class="grid-item">
+            <%= image_tag portfolio.photo.url(size: nil), alt: "random" %>
+          </div>
+      <% end %>
+    </div>
+</div>
+<%= render "shared/contact" %>
+<%= render "shared/footer", about: @about  %>

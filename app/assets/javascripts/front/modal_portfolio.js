@@ -48,7 +48,7 @@ jQuery(function($) {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <a href="${data['pdf']}" class="btn btn-primary" target="_blank">Details</a>
+            <a href="/details?portfolio_id=${data['id']}" class="btn btn-primary" target="_blank">Details</a>
           </div>
         </div>
       </div>

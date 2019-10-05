@@ -29,4 +29,4 @@
 /variables/*
 /config/imgur.yml
 /config/application.yml
-/config/database.yml
+/config/database.*
