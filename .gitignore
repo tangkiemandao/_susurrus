@@ -28,3 +28,5 @@
 # ignore variable
 /variables/*
 /config/imgur.yml
+/config/application.yml
+/config/database.yml

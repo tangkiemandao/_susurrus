@@ -812,6 +812,22 @@ section.cd-section {
 	font-size: 40px;
 }
 
+.img-portfolio-new {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.img-portfolio-new:hover {
+  -webkit-filter: none;
+}
+
+figure.effect-bubba-new:hover img {
+	opacity: 1 !important;
+  filter: none;
+}
+.gallery-grids figure.effect-bubba-new:hover {
+  background: none !important;
+}
+
 	/*-- Tabs --*/
 
 	.tabs {

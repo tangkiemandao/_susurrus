@@ -41,12 +41,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'capistrano', require: false                                                                                                                                                     
-  gem 'capistrano-bundler', require: false                                                                                                                                             
-  gem 'capistrano-maintenance', require: false                                                                                                                                         
-  gem 'capistrano-passenger', require: false                                                                                                                                           
-  gem 'capistrano-rails', require: false                                                                                                                                               
-  gem 'capistrano-rails-console', require: false                                                                                                                                       
-  gem 'capistrano-rbenv', require: false   
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-maintenance', require: false
+  gem 'capistrano-passenger', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rbenv', require: false
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,44 @@
+<!-- Portfolio -->
+<div class="portfolio" id="portfolio">
+  <div id="modal-details"></div>
+  <div class="container">
+  	<h3>Portfolio</h3>
+  	<div class="tabs tabs-style-bar">
+  		<nav class="hide">
+  			<ul>
+  				<li><a href="#section-bar-1" class="icon icon-box"><span>FASHION</span></a></li>
+  			</ul>
+  		</nav>
+  		<div class="content-wrap">
+  			<!-- Tab-1 -->
+  			<section id="section-bar-1" class="agileits text-center ">
+  				<div class="gallery-grids">
+            <% portfolios.each do |portfolio| %>
+  					  <div class="col-md-4 col-sm-4 gallery-top">
+                <a href="#" data-session="<%= session[:portfolio][portfolio.id].to_json %>"  class="modal-pr" title="<%= portfolio.introduce %>">
+  					  		<figure class="effect-bubba-new effect-bubba">
+                    <img src="<%= portfolio.photo.url(size: nil) %>" alt="" class="img-responsive img-portfolio img-portfolio-new" style="min-height: 258px; max-height: 258px">
+  					  			<figcaption>
+                      <h4><%= portfolio.name  %></h4>
+  					  			</figcaption>
+  					  		</figure>
+  					  	</a>
+                <% portfolio.portfolio_details.each do |detail|  %>
+                  <a href="<%= detail.photo.url(size: nil) %>" class="swipebox_<%= portfolio.id %> hide" title="<%= detail.introduce %>"></a>
+                <% end %>
+  					  </div>
+            <% end %>
+  					<div class="clearfix"></div>
+  				</div>
+  			</section>
+  			<!-- //Tab-1 -->
+  		</div><!-- //Content -->
+  	</div><!-- //Tabs -->
+  </div>
+</div>
+<!-- //Portfolio -->
+<script>
+  <% @portfolios.each do |portfolio|  %>
+    jQuery(".swipebox_<%= portfolio.id  %>").swipebox();
+  <% end %>
+</script>
