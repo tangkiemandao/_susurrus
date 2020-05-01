@@ -1,7 +1,7 @@
 <!-- Portfolio -->
 <div class="portfolio" id="portfolio">
   <div id="modal-details"></div>
-  <div class="container">
+  <div class="margin-none">
   	<h3>Portfolio</h3>
   	<div class="tabs tabs-style-bar">
   		<nav class="hide">
@@ -14,7 +14,7 @@
   			<section id="section-bar-1" class="agileits text-center ">
   				<div class="gallery-grids">
             <% portfolios.each do |portfolio| %>
-  					  <div class="col-md-4 col-sm-4 gallery-top">
+  					  <div class="col-md-3 col-sm-3 gallery-top">
                 <a href="#" data-session="<%= session[:portfolio][portfolio.id].to_json %>" class="modal-pr" title="<%= portfolio.introduce %>">
   					  		<figure class="effect-bubba-new effect-bubba">
                     <img src="<%= portfolio.photo.url(size: nil) %>" alt="" class="img-responsive img-portfolio img-portfolio-new" style="min-height: 258px; max-height: 258px">

@@ -2,9 +2,7 @@ class HomeController < ApplicationController
   def index
     @sliders    = Slider.where(visible: true)
     @about      = About.first
-    @skills     = Skill.all
     @portfolios = Portfolio.where(visible: true).order(:id).includes(:portfolio_details)
-    @photos     = Photo.limit(8).order("RAND()")
 
     set_session
   end

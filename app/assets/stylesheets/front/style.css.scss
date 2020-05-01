@@ -828,6 +828,11 @@ figure.effect-bubba-new:hover img {
   background: none !important;
 }
 
+.margin-none {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 	/*-- Tabs --*/
 
 	.tabs {
@@ -916,7 +921,7 @@ figure.effect-bubba-new:hover img {
 			display: none;
 			margin: 0 auto;
 			padding: 0;
-			max-width: 1200px;
+			// max-width: 1200px;
 			text-align: center;
 		}
 

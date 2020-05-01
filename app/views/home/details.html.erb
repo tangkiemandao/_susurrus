@@ -1,5 +1,5 @@
 <%= render "shared/header", sliders: @sliders, hide_menu: true %>
-<div class="container mr-top-2x">
+<div class="margin-none mr-top-2x">
     <div class="grid">
         <div class="grid-sizer"></div>
       <% @portfolio_details.each do |portfolio| %>
@@ -9,5 +9,4 @@
       <% end %>
     </div>
 </div>
-<%= render "shared/contact" %>
 <%= render "shared/footer", about: @about  %>
