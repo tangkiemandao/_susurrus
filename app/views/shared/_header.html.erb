@@ -6,22 +6,13 @@
         <% if @sliders.count > 1  %>
           <% @sliders.each do |slider| %>
             <div data-src="<%= slider.photo.url(size: nil) %>" class="text-center agileits">
-				    	<div class="camera_caption text-center agileits fadeFromBottom">
-                <h3 class="text-center agileits"><%= slider.caption  %></h3>
-				    	</div>
 				    </div>
           <% end  %>
         <% else  %>
           <% @sliders.each do |slider| %>
             <div data-src="<%= slider.photo.url(size: nil) %>" class="text-center agileits">
-				    	<div class="camera_caption text-center agileits fadeFromBottom">
-                <h3 class="text-center agileits"><%= slider.caption  %></h3>
-				    	</div>
 				    </div>
             <div data-src="<%= slider.photo.url(size: nil) %>" class="text-center agileits">
-				    	<div class="camera_caption text-center agileits fadeFromBottom">
-                <h3 class="text-center agileits"><%= slider.caption  %></h3>
-				    	</div>
 				    </div>
           <% end  %>
         <% end  %>
