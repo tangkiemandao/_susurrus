@@ -32,10 +32,6 @@ jQuery(function($) {
                   <td>${data["location"]}</td>
                 </tr>
                 <tr>
-                  <th>Lead architects</th>
-                  <td>${data["lead_architects"]}</td>
-                </tr>
-                <tr>
                   <th>Area</th>
                   <td>${data["area"]}</td>
                 </tr>

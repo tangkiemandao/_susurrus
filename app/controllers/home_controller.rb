@@ -22,6 +22,7 @@ class HomeController < ApplicationController
   end
 
   def details
+    @page_title       = 'Member Login'
     @sliders = Slider.where(visible: true)
     @portfolio = Portfolio.find_by(id: params[:portfolio_id])
     @portfolio_details = @portfolio.try(:portfolio_details) || []

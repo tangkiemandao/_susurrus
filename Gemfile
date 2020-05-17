@@ -26,6 +26,7 @@ gem 'imgurapi', git: 'git://github.com/trungle1612/imgur'
 gem 'pry-byebug'
 gem 'pry-rails'
 gem 'whenever', require: false
+gem 'meta-tags'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

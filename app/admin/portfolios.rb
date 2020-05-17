@@ -1,7 +1,7 @@
 ActiveAdmin.register Portfolio do
  actions :all
  permit_params :name, :introduce, :photo, :visible, :area,
-               :architect, :location, :lead_architects, :photographs, :pdf
+               :architect, :location, :photographs, :pdf
 
  index do
    column :id
@@ -9,7 +9,7 @@ ActiveAdmin.register Portfolio do
    column :introduce
    column :architect
    column :location
-   column :lead_architects
+   # column :lead_architects
    column :area
    column :photographs
    column :pdf
@@ -31,7 +31,7 @@ ActiveAdmin.register Portfolio do
      row :introduce
      row :architect
      row :location
-     row :lead_architects
+     # row :lead_architects
      row :area
      row :photographs
      row :pdf do |link|
@@ -50,7 +50,7 @@ ActiveAdmin.register Portfolio do
      f.input :introduce
      f.input :architect
      f.input :location, as: :select, collection: Settings.cities
-     f.input :lead_architects
+     # f.input :lead_architects
      f.input :area, as: :number
      f.input :photographs
      if f.object.photo.present?

@@ -15,7 +15,7 @@
   				<div class="gallery-grids">
             <% portfolios.each do |portfolio| %>
   					  <div class="col-md-3 col-sm-4 gallery-top">
-                <a href="#" data-session="<%= session[:portfolio][portfolio.id].to_json %>"  class="modal-pr" title="<%= portfolio.introduce %>">
+                <a href="/details?portfolio_id=<%= portfolio.id %>" data-session="<%= session[:portfolio][portfolio.id].to_json %>"  class="temp-modal-pr" title="<%= portfolio.introduce %>">
   					  		<figure class="effect-bubba">
                     <img src="<%= portfolio.photo.url(size: nil)  %>" alt="" class="img-responsive img-portfolio" style="min-height: 258px; max-height: 258px">
   					  			<figcaption>
