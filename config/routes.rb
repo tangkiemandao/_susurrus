@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   controller :home do
     get 'send_mail', action: :send_mail
     get 'photos(/page/:page)', action: :photo
-    get 'details', action: :details
+    get 'details/:portfolio_id', action: :details
   end
 end

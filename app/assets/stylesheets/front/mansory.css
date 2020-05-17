@@ -33,6 +33,10 @@
   margin-top: 20px;
 }
 
+.mr-bottom-2x{
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 40em) { 
     .grid-sizer, .grid-item {
         width: 50%;

@@ -1,12 +1,46 @@
+<% set_meta_tags title: @portfolio.name,
+                 description: @portfolio.introduce,
+                 keywords: @portfolio.name.try(:split, ' ') %>
+<% set_meta_tags og: {
+  title:    @portfolio.name,
+  type:     'website',
+  url:      request.original_url,
+  image:    @portfolio.photo.url(size: nil),
+  description: @portfolio.introduce
+} %>
+
 <%= render "shared/header", sliders: @sliders, hide_menu: true %>
-<div class="margin-none mr-top-2x">
-    <div class="grid">
-        <div class="grid-sizer"></div>
-      <% @portfolio_details.each do |portfolio| %>
-         <div class="grid-item">
-            <%= image_tag portfolio.photo.url(size: nil), alt: "random" %>
-          </div>
-      <% end %>
-    </div>
+<div class="margin-none mr-top-2x mr-bottom-2x">
+  <h2><%= @portfolio.name %></h2>
+  <div class="container">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th>Architect</th>
+          <td><%= @portfolio.architect %></td>
+        </tr>
+        <tr>
+          <th>Location</th>
+          <td><%= @portfolio.location %></td>
+        </tr>
+        <tr>
+          <th>Area</th>
+          <td><%= @portfolio.area %></td>
+        </tr>
+        <tr>
+          <th>Photographs</th>
+          <td><%= @portfolio.photographs %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid">
+    <div class="grid-sizer"></div>
+    <% @portfolio_details.each do |portfolio| %>
+      <div class="grid-item">
+        <%= image_tag portfolio.photo.url(size: nil), alt: "random" %>
+       </div>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer", about: @about  %>

@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   host: localhost
   port: 3306
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /tmp/mysql.sock
 
 default_local: &default_local
   <<: *default
