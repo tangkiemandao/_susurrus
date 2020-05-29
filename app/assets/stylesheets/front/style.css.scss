@@ -419,6 +419,9 @@ section.cd-section {
     display: -ms-flexbox;
     display: flex;
   }
+  .modal-dialog {
+    width: 60%;
+  }
 }
 
 @-webkit-keyframes cd-move-in {
