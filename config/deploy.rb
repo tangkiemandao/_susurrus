@@ -19,7 +19,7 @@ set :linked_files, %w{config/imgur.yml config/application.yml}
 set :whenever_environment, fetch(:stage) # This fetches the appropriate environment
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
-namespace :deploy do    
+namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
