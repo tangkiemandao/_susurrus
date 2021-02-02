@@ -51,7 +51,7 @@ ActiveAdmin.register Portfolio do
      f.input :architect
      f.input :location, as: :select, collection: Settings.cities
      # f.input :lead_architects
-     f.input :area, as: :number
+     f.input :area
      f.input :photographs
      if f.object.photo.present?
       f.input :photo, as: :file, required: true, :hint => image_tag(f.object.photo.url(size: nil)) if f.object.photo.present?
@@ -64,5 +64,4 @@ ActiveAdmin.register Portfolio do
 
    f.actions
  end
-
 end
